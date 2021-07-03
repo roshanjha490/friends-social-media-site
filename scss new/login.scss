@@ -1,0 +1,134 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.siteForm::-webkit-scrollbar {
+  width: 4px;
+}
+
+.siteForm::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px transparent;
+}
+
+.siteForm::-webkit-scrollbar-thumb {
+  background-color: transparent;
+  outline: 1px solid transparent;
+}
+
+.row {
+  width: 100% !important;
+  height: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+#signUp {
+  color: #007bff;
+  text-decoration-line: underline;
+}
+
+#signUpForm {
+  display: none;
+}
+
+.your-class::-webkit-input-placeholder {
+  color: red;
+}
+
+.bigDiv {
+  z-index: -1;
+  background: #eee;
+  .coverPhoto {
+    overflow: hidden;
+    .bgblack {
+      background: #000000db;
+      z-index: 2;
+      top: 0;
+      left: 0;
+    }
+    img {
+      z-index: 1;
+      top: 0;
+      left: 0;
+    }
+  }
+
+  .siteForm {
+    width: 450px;
+    max-height: 500px;
+    background: white;
+    overflow-y: scroll;
+    .formLogo {
+      height: 60px;
+    }
+    .formInputs {
+      max-height: 500px;
+    }
+  }
+}
+
+.loader {
+  background-color: #ffffff42;
+  display: none;
+  img {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+// Media quereies for login.php page
+
+// Small devices (landscape phones, less than 768px)
+@media (max-width: 767.98px) {
+  .coverPhoto {
+    display: none;
+  }
+
+  .bgPhoto_in_form {
+    background-image: url("../img/01_bg_form.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: blue;
+  }
+
+  .new_remember_me {
+    margin-bottom: 1rem !important;
+  }
+
+  .siteForm::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  .siteForm::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  }
+
+  .siteForm::-webkit-scrollbar-thumb {
+    background-color: darkgrey;
+    outline: 1px solid slategrey;
+  }
+}
+
+@media (max-width: 320.98px) {
+  .new_remember_me {
+    margin-bottom: 1rem !important;
+  }
+
+  .siteForm::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  .siteForm::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  }
+
+  .siteForm::-webkit-scrollbar-thumb {
+    background-color: darkgrey;
+    outline: 1px solid slategrey;
+  }
+}

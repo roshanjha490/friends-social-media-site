@@ -1,0 +1,276 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.row {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.bgimg {
+  top: 0;
+  left: 0;
+  z-index: 1;
+  overflow: hidden;
+  background-image: url("../img/01.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.blckbx {
+  top: 0;
+  left: 0;
+  z-index: 3;
+  background: #000000ed;
+  overflow: hidden;
+}
+
+.formDiv {
+  width: 450px;
+  max-height: 600px;
+  background: #eeeeee;
+  overflow-y: hidden;
+  // border-radius: 5px;
+}
+
+.editDiv {
+  width: 500px;
+  max-height: 600px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  background: #eeeeee;
+  h6 {
+    font-weight: 900;
+  }
+}
+
+.editDiv::-webkit-scrollbar {
+  width: 4px;
+}
+
+.editDiv::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+.editDiv::-webkit-scrollbar-thumb {
+  background-color: darkgrey;
+  outline: 1px solid slategrey;
+}
+
+#signUp {
+  color: #007bff;
+  text-decoration-line: underline;
+}
+
+#signUpForm {
+  display: none;
+}
+
+.your-class::-webkit-input-placeholder {
+  color: red;
+}
+
+.bigDiv {
+  z-index: -1;
+  background: #eee;
+  .coverPhoto {
+    overflow: hidden;
+    .bgblack {
+      background: #000000c2;
+      z-index: 2;
+      top: 0;
+      left: 0;
+    }
+    img {
+      z-index: 1;
+      top: 0;
+      left: 0;
+    }
+  }
+
+  .siteForm {
+    width: 450px;
+    max-height: 500px;
+    background: white;
+    overflow-y: scroll;
+    .formLogo {
+      height: 60px;
+    }
+    .formInputs {
+      max-height: 500px;
+    }
+  }
+}
+
+.your-class::-webkit-input-placeholder {
+  color: red;
+}
+
+span#loader {
+  width: 50px;
+  top: 0;
+  right: 0;
+  display: none;
+  z-index: 9;
+}
+
+#defaultLoginFormEmail {
+  outline: none !important;
+  z-index: 3 !important;
+}
+
+.extr1 {
+  // padding-top: 10px;
+  height: auto;
+  #error {
+    color: red;
+    font-weight: bold;
+  }
+}
+
+.siteForm::-webkit-scrollbar {
+  width: 4px;
+}
+
+.siteForm::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+.siteForm::-webkit-scrollbar-thumb {
+  background-color: darkgrey;
+  outline: 1px solid slategrey;
+}
+
+// Media quereies for login.php page
+
+@media (max-width: 1200px) {
+  .editDiv {
+    width: 500px;
+    max-height: 500px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    background: #eeeeee;
+    h6 {
+      font-weight: 900;
+    }
+  }
+}
+
+@media (max-width: 540px) {
+  .editDiv {
+    width: 400px;
+    max-height: 450px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    background: #eeeeee;
+    h6 {
+      font-weight: 900;
+    }
+  }
+}
+
+// Small devices (landscape phones, less than 768px)
+@media (max-width: 767.98px) {
+  .coverPhoto {
+    display: none;
+  }
+
+  .bgPhoto_in_form {
+    background-image: url("../img/01_bg_form.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: blue;
+  }
+
+  .new_remember_me {
+    margin-bottom: 1rem !important;
+  }
+
+  .siteForm::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  .siteForm::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  }
+
+  .siteForm::-webkit-scrollbar-thumb {
+    background-color: darkgrey;
+    outline: 1px solid slategrey;
+  }
+}
+
+@media (max-width: 450px) {
+  .coverPhoto {
+    display: none;
+  }
+
+  .bgPhoto_in_form {
+    background-image: url("../img/01_bg_form.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: blue;
+  }
+
+  .new_remember_me {
+    margin-bottom: 1rem !important;
+  }
+
+  .siteForm::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  .siteForm::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  }
+
+  .siteForm::-webkit-scrollbar-thumb {
+    background-color: darkgrey;
+    outline: 1px solid slategrey;
+  }
+
+  .formDiv {
+    width: 300px;
+    max-height: 600px;
+    background: #eeeeee;
+    overflow-y: hidden;
+  }
+}
+
+@media (max-width: 320.98px) {
+  .new_remember_me {
+    margin-bottom: 1rem !important;
+  }
+
+  .siteForm::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  .siteForm::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  }
+
+  .siteForm::-webkit-scrollbar-thumb {
+    background-color: darkgrey;
+    outline: 1px solid slategrey;
+  }
+
+  .editDiv {
+    width: 300px;
+    max-height: 450px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    background: #eeeeee;
+    h6 {
+      font-weight: 900;
+    }
+  }
+}
