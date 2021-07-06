@@ -28,7 +28,9 @@ clearstatcache();
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Sahitya Social Site</title>
+    <title>Friends | Social Media Site</title>
+    <!-- Font Awesome -->
+    <link rel="icon" type="image/png" sizes="32x32" href="img/emj1.png">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
     <!-- Bootstrap core CSS -->
@@ -39,6 +41,21 @@ clearstatcache();
     <link href="css/style.css" rel="stylesheet">
     <!-- Your custom styles (New) -->
     <link href="scss new/signup.css?v=<?php echo time(); ?>" rel="stylesheet">
+    <style>
+        .loader_2021 {
+            background-color: #ffffffbf;
+            display: none;
+            z-index: 999;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .loader_2021 img {
+            width: 50px;
+            height: 50px;
+        }
+    </style>
 </head>
 
 <body>
@@ -94,6 +111,14 @@ clearstatcache();
         <div id="wrr"></div>
         <!-- SCRIPTS -->
 
+        <!-- Loader for the login Process -->
+        <div id="loader_2021" class="loader_2021 w-100 h-100 position-absolute">
+            <div class="w-100 h-100 d-flex justify-content-center align-items-center">
+                <img src="img/loader.GIF" alt="loader.gif">
+            </div>
+        </div>
+
+
         <!-- jQuery -->
         <script type="text/javascript" src="js/jquery.min.js"></script>
         <!-- Bootstrap tooltips -->
@@ -127,6 +152,10 @@ clearstatcache();
                             // $('#signIn').attr("disabled", true);
 
                             $('#loader').css("display", "inline");
+
+                            $('.loader_2021').css("display", "inline");
+
+                            $('#defaultLoginFormEmail').attr("disabled", "true");
                         },
                         success: function(response) {
 
@@ -135,7 +164,7 @@ clearstatcache();
                                 $('#defaultLoginFormEmail').css("color", "red");
                                 $("#username_sbm").attr("disabled", true);
                                 // $('#error').html(`Must start with letter having 3 - 32 characters with Letters and numbers only`);
-                                $('#error').html(`This Username is not valid`);
+                                $('#error').html(`This Username is not valid use atleast three charecters`);
                                 $('#error').css('color', 'red');
 
                             } else {
@@ -154,6 +183,13 @@ clearstatcache();
 
                             }
                             $('#loader').css("display", "none");
+
+                            $('.loader_2021').css("display", "none");
+
+                            $('#defaultLoginFormEmail').removeAttr("disabled");
+                            
+                            $('#defaultLoginFormEmail').focus();
+
                         }
 
                     });
@@ -162,6 +198,11 @@ clearstatcache();
 
                     if (inputVal == '') {
                         $('#loader').css("display", "none");
+
+                        $('.loader_2021').css("display", "none");
+
+                        $('#defaultLoginFormEmail').attr("disabled", "false");
+
                     }
                 });
 
@@ -185,6 +226,9 @@ clearstatcache();
                             fullname: fullname,
                             password: password,
                             email: email,
+                        },
+                        beforeSend: function() {
+                            $('.loader_2021').css("display", "inline");
                         },
                         success: function(response) {
                             if (response == 'u_wrg') {
@@ -218,6 +262,8 @@ clearstatcache();
 
                                 $('#defaultLoginFormEmail').addClass('your-class');
                             }
+
+                            $('.loader_2021').css("display", "none");
 
                         }
                     });

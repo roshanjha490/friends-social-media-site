@@ -17,8 +17,14 @@ $(document).ready(function () {
                 data: {
                     following_id: id_of_user_to_be_followed,
                 },
-                success: function (data) {
+                beforeSend: function () {
 
+                    // Before Send Loading Loader set Login Process
+                    $('.loader_2021').css("display", "inline");
+                },
+                success: function (data) {
+                    $('.loader_2021').css("display", "none");
+                    
                     // $('.showerror').html(data);
                 }
             })
@@ -36,9 +42,15 @@ $(document).ready(function () {
                 data: {
                     following_id: id_of_user_to_be_followed,
                 },
-                success: function (data) {
+                beforeSend: function () {
 
+                    // Before Send Loading Loader set Login Process
+                    $('.loader_2021').css("display", "inline");
+                },
+                success: function (data) {
+                    
                     // $('.showerror').html(data);
+                    $('.loader_2021').css("display", "none");
                 }
             });
         });

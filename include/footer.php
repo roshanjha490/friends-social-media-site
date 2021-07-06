@@ -1,3 +1,10 @@
+<!-- Loader for the login Process -->
+<div id="loader_2021" class="loader_2021 w-100 h-100 position-absolute">
+    <div class="w-100 h-100 d-flex justify-content-center align-items-center">
+        <img src="img/loader.GIF" alt="loader.gif">
+    </div>
+</div>
+
 <!-- jQuery -->
 <script type="text/javascript" src="js/jquery.min.js"></script>
 <!-- Bootstrap tooltips -->

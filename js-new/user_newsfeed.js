@@ -1,4 +1,3 @@
-
 //Ajax method that gets started when an file is choosen
 $(document).ready(function () {
 
@@ -13,7 +12,7 @@ $(document).ready(function () {
 
             var img_extension = imageName.split('.').pop().toLowerCase();
 
-            if (jQuery.inArray(img_extension, ['gif', 'png', 'jpg', 'jpeg',]) == -1) {
+            if (jQuery.inArray(img_extension, ['gif', 'png', 'jpg', 'jpeg', ]) == -1) {
                 $('#uploadPostErr').show();
             } else {
 
@@ -25,6 +24,11 @@ $(document).ready(function () {
                     url: 'ajax/uploadimg.php',
                     type: 'post',
                     data: form_data,
+                    beforeSend: function () {
+    
+                        // Before Send Loading Loader set Login Process
+                        $('.loader_2021').css("display", "inline");
+                    },
                     contentType: false,
                     cache: false,
                     processData: false,
@@ -49,6 +53,8 @@ $(document).ready(function () {
                         $('#cancelFormBtn').show();
 
                         $('#uploadPostErr').hide();
+
+                        $('.loader_2021').css("display", "none");
 
                     }
                 });
@@ -100,6 +106,7 @@ $(document).ready(function () {
             $('#Post_Image').attr("src", '');
             $('#showupload_file_bx').hide();
             $('#fileIconList').show();
+            $('#post_form_Caption').css("height", "30px");
         });
 
         //Ajax method that get started when the user clicks the Post button 
@@ -122,6 +129,11 @@ $(document).ready(function () {
                     Post_Caption: Post_Caption,
                     Post_Image: Post_Image
                 },
+                beforeSend: function () {
+
+                    // Before Send Loading Loader set Login Process
+                    $('.loader_2021').css("display", "inline");
+                },
                 success: function (data) {
                     $('#post_form_Caption').val('');
                     $('#cancelFormBtn').hide();
@@ -134,8 +146,13 @@ $(document).ready(function () {
                     $('#showPost_bx').prepend(data);
 
                     $('#nopost_bx').hide();
-
+                    
                     all_my_newsfeed();
+
+                    $('#post_form_Caption').css("height", "30px");
+                    
+                    // $('#loader').css("display", "none");
+                    $('.loader_2021').css("display", "none");
                 }
             });
         });
@@ -161,11 +178,17 @@ $(document).ready(function () {
                     Post_id: var_post_id,
                     user_id: var_user_id
                 },
+                beforeSend: function () {
+
+                    // Before Send Loading Loader set Login Process
+                    $('.loader_2021').css("display", "inline");
+                },
                 success: function (data) {
                     if (data == 'success') {
                         // alert(data);
                     }
                     // alert(data);
+                    $('.loader_2021').css("display", "none");
                 }
             });
         });
@@ -189,12 +212,18 @@ $(document).ready(function () {
                 data: {
                     Post_id: var_post_id,
                     user_id: var_user_id
+                },                
+                beforeSend: function () {
+    
+                    // Before Send Loading Loader set Login Process
+                    $('.loader_2021').css("display", "inline");
                 },
                 success: function (data) {
                     if (data == 'success') {
                         // alert(data);
                     }
                     // alert(data);
+                    $('.loader_2021').css("display", "none");
                 }
             });
 
@@ -266,6 +295,11 @@ $(document).ready(function () {
                         post_comment_id: post_comment_id,
                         commenter_id: commenter_id,
                         commenter_comment: post_comment,
+                    },                    
+                    beforeSend: function () {
+    
+                        // Before Send Loading Loader set Login Process
+                        $('.loader_2021').css("display", "inline");
                     },
                     success: function (data) {
                         if (data == 'success') {
@@ -274,6 +308,7 @@ $(document).ready(function () {
                         }
                         // alert(data);
                         location.reload();
+                        $('.loader_2021').css("display", "none");
                     }
                 });
 
@@ -298,8 +333,15 @@ $(document).ready(function () {
                 type: 'post',
                 data: {
                     Post_id: idOfPost,
+                },                
+                beforeSend: function () {
+    
+                    // Before Send Loading Loader set Login Process
+                    $('.loader_2021').css("display", "inline");
                 },
-                success: function (data) { }
+                success: function (data) {
+                    $('.loader_2021').css("display", "none");
+                }
             });
 
         });
@@ -311,11 +353,16 @@ $(document).ready(function () {
                 type: 'post',
                 data: {
                     following_id: id_of_user_to_be_followed,
+                },                
+                beforeSend: function () {
+    
+                    // Before Send Loading Loader set Login Process
                 },
                 success: function (data) {
                     if (data == 'success') {
                         window.location.href = "index.php";
                     }
+                    $('.loader_2021').css("display", "none");
                 }
             });
         });
@@ -343,8 +390,14 @@ $(document).ready(function () {
                     post_id: var_post_id,
                     index_of_comment: var_index_of_comment
                 },
+                beforeSend: function () {
+
+                    // Before Send Loading Loader set Login Process
+                    $('.loader_2021').css("display", "inline");
+                },
                 success: function (data) {
                     // alert(data);
+                    $('.loader_2021').css("display", "none");
                 }
             });
         });
@@ -370,8 +423,14 @@ $(document).ready(function () {
                     post_id: var_post_id,
                     index_of_comment: var_index_of_comment
                 },
+                beforeSend: function () {
+
+                    // Before Send Loading Loader set Login Process
+                    $('.loader_2021').css("display", "inline");
+                },
                 success: function (data) {
                     // alert(data);
+                    $('.loader_2021').css("display", "none");
                 }
             });
         });
@@ -389,8 +448,14 @@ $(document).ready(function () {
                     post_id: var_post_id,
                     index_of_comment: var_index_of_comment
                 },
+                beforeSend: function () {
+
+                    // Before Send Loading Loader set Login Process
+                    $('.loader_2021').css("display", "inline");
+                },
                 success: function (data) {
                     location.reload();
+                    $('.loader_2021').css("display", "none");
                 }
             });
         });

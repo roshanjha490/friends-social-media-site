@@ -8,7 +8,7 @@
     <title>Friends | Social Media Site</title>
     <!-- MDB icon -->
     <!-- <link rel="icon" href="img/mdb-favicon.ico" type="image/x-icon"> -->
-    <!-- Font Awesome -->    
+    <!-- Font Awesome -->
     <link rel="icon" type="image/png" sizes="32x32" href="img/emj1.png">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
     <!-- Bootstrap core CSS -->
@@ -19,6 +19,21 @@
     <link rel="stylesheet" href="css/style.css">
     <link href="scss new/index.css" rel="stylesheet">
     <link href="scss new/post.css" rel="stylesheet">
+    <style>
+        .loader_2021 {
+            background-color: #ffffffbf;
+            display: none;
+            z-index: 999;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .loader_2021 img {
+            width: 50px;
+            height: 50px;
+        }
+    </style>
 </head>
 
 <body>

@@ -37,7 +37,9 @@ clearstatcache();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Social Media Site</title>
+    <title>Friends | Social Media Site</title>
+    <!-- Font Awesome -->
+    <link rel="icon" type="image/png" sizes="32x32" href="img/emj1.png">
     <!-- MDB icon -->
     <!-- <link rel="icon" href="img/mdb-favicon.ico" type="image/x-icon"> -->
     <!-- Font Awesome -->

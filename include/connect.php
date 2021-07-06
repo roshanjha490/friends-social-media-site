@@ -11,7 +11,7 @@ class Server
     public function __construct($serverName, $userName, $password, $databaseName)
     {
         // Create Connection
-        @$this->con = mysqli_connect($serverName, $userName, $password);
+        @$this->con = mysqli_connect($serverName, $userName, $password, $databaseName);
 
         // Check connection
         if (@!$this->con) {
@@ -19,58 +19,58 @@ class Server
         }
 
         // Creating Database and tables
-        else {
+        // else {
             // Create database
-            $sql = "CREATE DATABASE IF NOT EXISTS $databaseName";
-            $this->con->query($sql);
+            // $sql = "CREATE DATABASE IF NOT EXISTS $databaseName";
+            // $this->con->query($sql);
 
-            // Selecting Database
-            $this->con->query("use $databaseName");
+            // // Selecting Database
+            // $this->con->query("use $databaseName");
 
-            // Create users Table
-            $sql2 = "CREATE TABLE IF NOT EXISTS `users` (
-                `id` int(11) NOT NULL AUTO_INCREMENT,
-                `user_name` varchar(255) NOT NULL,
-                `full_name` varchar(255) NOT NULL,
-                `password` varchar(255) NOT NULL,
-                `email_id` varchar(255) NOT NULL,
-                `profile_pic` varchar(255) DEFAULT 'img/default-profile.jpg',
-                `cover_pic` varchar(255) DEFAULT 'img/default_cover.jpg',
-                `Bio` varchar(1000) DEFAULT NULL,
-                `Location` varchar(255) DEFAULT NULL,
-                `Gender` varchar(255) DEFAULT NULL,
-                `Birth_date` varchar(255) DEFAULT NULL,
-                `joined_date` varchar(255) DEFAULT NULL,
-                `privacy_status` varchar(255) DEFAULT 'Public',
-                `viewed_till` int(11) DEFAULT '0',
-                `followers` varchar(255) DEFAULT 'n_value',
-                `following` varchar(255) DEFAULT 'n_value',
-                `request_by` varchar(10000) DEFAULT '1:2',
-                `user_images` varchar(10000) DEFAULT NULL,
-                `blocked_by` varchar(10000) NOT NULL DEFAULT '1:2',
-                `Notification` varchar(10000) DEFAULT NULL,
-                PRIMARY KEY (`id`),
-                UNIQUE KEY `Un_uname` (`user_name`),
-                UNIQUE KEY `Un_email` (`email_id`)
-                )";
-            $this->con->query($sql2);
+            // // Create users Table
+            // $sql2 = "CREATE TABLE IF NOT EXISTS `users` (
+            //     `id` int(11) NOT NULL AUTO_INCREMENT,
+            //     `user_name` varchar(255) NOT NULL,
+            //     `full_name` varchar(255) NOT NULL,
+            //     `password` varchar(255) NOT NULL,
+            //     `email_id` varchar(255) NOT NULL,
+            //     `profile_pic` varchar(255) DEFAULT 'img/default-profile.jpg',
+            //     `cover_pic` varchar(255) DEFAULT 'img/default_cover.jpg',
+            //     `Bio` varchar(1000) DEFAULT NULL,
+            //     `Location` varchar(255) DEFAULT NULL,
+            //     `Gender` varchar(255) DEFAULT NULL,
+            //     `Birth_date` varchar(255) DEFAULT NULL,
+            //     `joined_date` varchar(255) DEFAULT NULL,
+            //     `privacy_status` varchar(255) DEFAULT 'Public',
+            //     `viewed_till` int(11) DEFAULT '0',
+            //     `followers` varchar(255) DEFAULT 'n_value',
+            //     `following` varchar(255) DEFAULT 'n_value',
+            //     `request_by` varchar(10000) DEFAULT '1:2',
+            //     `user_images` varchar(10000) DEFAULT NULL,
+            //     `blocked_by` varchar(10000) NOT NULL DEFAULT '1:2',
+            //     `Notification` varchar(10000) DEFAULT NULL,
+            //     PRIMARY KEY (`id`),
+            //     UNIQUE KEY `Un_uname` (`user_name`),
+            //     UNIQUE KEY `Un_email` (`email_id`)
+            //     )";
+            // $this->con->query($sql2);
 
-            // Create UsersPosts Table
-            $sql3 = "CREATE TABLE IF NOT EXISTS `user_posts` (
-                    `id` int(11) NOT NULL AUTO_INCREMENT,
-                    `user_id` int(11) NOT NULL,
-                    `post_username` varchar(255) NOT NULL,
-                    `post_fullname` varchar(255) NOT NULL,
-                    `post_userprofile_pic` varchar(255) NOT NULL,
-                    `post_time` datetime NOT NULL,
-                    `post_caption` varchar(1000) DEFAULT NULL,
-                    `post_img` varchar(255) DEFAULT NULL,
-                    `post_likers` varchar(255) DEFAULT NULL,
-                    `post_comments` varchar(10000) DEFAULT NULL,
-                    PRIMARY KEY (`id`)
-                    )";
-            $this->con->query($sql3);
-        }
+            // // Create UsersPosts Table
+            // $sql3 = "CREATE TABLE IF NOT EXISTS `user_posts` (
+            //         `id` int(11) NOT NULL AUTO_INCREMENT,
+            //         `user_id` int(11) NOT NULL,
+            //         `post_username` varchar(255) NOT NULL,
+            //         `post_fullname` varchar(255) NOT NULL,
+            //         `post_userprofile_pic` varchar(255) NOT NULL,
+            //         `post_time` datetime NOT NULL,
+            //         `post_caption` varchar(1000) DEFAULT NULL,
+            //         `post_img` varchar(255) DEFAULT NULL,
+            //         `post_likers` varchar(255) DEFAULT NULL,
+            //         `post_comments` varchar(10000) DEFAULT NULL,
+            //         PRIMARY KEY (`id`)
+            //         )";
+            // $this->con->query($sql3);
+        // }
     }
 
     public function fetch_results_array($operation)

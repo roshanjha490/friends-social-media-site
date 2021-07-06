@@ -24,8 +24,9 @@ if (@$_SESSION['user_key']) {
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Sahitya Social Site</title>
+    <title>Friends | Social Media Site</title>
     <!-- Font Awesome -->
+    <link rel="icon" type="image/png" sizes="32x32" href="img/emj1.png">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
