@@ -54,7 +54,7 @@ $(document).ready(function () {
             form_data.append("file", property);
 
             $.ajax({
-                url: 'ajax/uploadimg.php',
+                url: 'ajax/uploadImg.php',
                 type: 'post',
                 data: form_data,
                 contentType: false,

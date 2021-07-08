@@ -200,13 +200,13 @@ if (@$_GET['username']) {
                                     <?php if ($run['user_id'] == $_SESSION['user_key']['id']) { ?>
                                         <div class="dropdown-menu">
                                             <a class="dropdown-item delete_post" onclick="deleteMyPost(<?php echo $run['id'] ?>)">Delete</a>
-                                            <a class="dropdown-item" href="post?post_id=<?php echo $run['id'] ?>">Go to Post</a>
+                                            <a class="dropdown-item" href="post.php?post_id=<?php echo $run['id'] ?>">Go to Post</a>
                                         </div>
                                     <?php } else { ?>
                                         <div class="dropdown-menu">
                                             <a class="dropdown-item" href="#">Report Inappropriate</a>
                                             <a class="dropdown-item unfollow_user_post" onclick="unfollowUser(<?php echo $run['user_id'] ?>)">Unfollow</a>
-                                            <a class="dropdown-item" href="post?post_id=<?php echo $run['id'] ?>">Go To Post</a>
+                                            <a class="dropdown-item" href="post.php?post_id=<?php echo $run['id'] ?>">Go To Post</a>
                                         </div>
                                     <?php } ?>
                                 </div>
@@ -251,14 +251,14 @@ if (@$_GET['username']) {
                                     &nbsp;
                                     <?php
                                     if ($run['post_comments'] == null) { ?>
-                                        <a class="m-0" href="post?post_id=<?php echo $run['id'] ?>"><span class="commnts_number_info">0</span> Comments</a>
+                                        <a class="m-0" href="post.php?post_id=<?php echo $run['id'] ?>"><span class="commnts_number_info">0</span> Comments</a>
                                     <?php } else {
 
                                         $post_comments_array = json_decode($run['post_comments'], true);
 
                                         $comment_number = count($post_comments_array);
                                     ?>
-                                        <a class="m-0" href="post?post_id=<?php echo $run['id'] ?>"><span class="commnts_number_info"><?php echo $comment_number ?></span> Comments</a>
+                                        <a class="m-0" href="post.php?post_id=<?php echo $run['id'] ?>"><span class="commnts_number_info"><?php echo $comment_number ?></span> Comments</a>
                                     <?php } ?>
                                 </div>
                             </div>
@@ -506,7 +506,7 @@ if (@$_GET['username']) {
                                         </div>
 
                             <?php }
-                                    echo '<a href="post?post_id=' . $run["id"] . '">Load Previous Comments</a> </div>';
+                                    echo '<a href="post.php?post_id=' . $run["id"] . '">Load Previous Comments</a> </div>';
                                 }
                             } ?>
                         </div>
@@ -645,13 +645,13 @@ if (@$_GET['username']) {
                                     <?php if ($run['user_id'] == $_SESSION['user_key']['id']) { ?>
                                         <div class="dropdown-menu">
                                             <a class="dropdown-item delete_post" onclick="deleteMyPost(<?php echo $run['id'] ?>)">Delete</a>
-                                            <a class="dropdown-item" href="post?post_id=<?php echo $run['id'] ?>">Go to Post</a>
+                                            <a class="dropdown-item" href="post.php?post_id=<?php echo $run['id'] ?>">Go to Post</a>
                                         </div>
                                     <?php } else { ?>
                                         <div class="dropdown-menu">
                                             <a class="dropdown-item" href="#">Report Inappropriate</a>
                                             <a class="dropdown-item unfollow_user_post" onclick="unfollowUser(<?php echo $run['user_id'] ?>)">Unfollow</a>
-                                            <a class="dropdown-item" href="post?post_id=<?php echo $run['id'] ?>">Go To Post</a>
+                                            <a class="dropdown-item" href="post.php?post_id=<?php echo $run['id'] ?>">Go To Post</a>
                                         </div>
                                     <?php } ?>
                                 </div>
@@ -696,14 +696,14 @@ if (@$_GET['username']) {
                                     &nbsp;
                                     <?php
                                     if ($run['post_comments'] == null) { ?>
-                                        <a class="m-0" href="post?post_id=<?php echo $run['id'] ?>"><span class="commnts_number_info">0</span> Comments</a>
+                                        <a class="m-0" href="post.php?post_id=<?php echo $run['id'] ?>"><span class="commnts_number_info">0</span> Comments</a>
                                     <?php } else {
 
                                         $post_comments_array = json_decode($run['post_comments'], true);
 
                                         $comment_number = count($post_comments_array);
                                     ?>
-                                        <a class="m-0" href="post?post_id=<?php echo $run['id'] ?>"><span class="commnts_number_info"><?php echo $comment_number ?></span> Comments</a>
+                                        <a class="m-0" href="post.php?post_id=<?php echo $run['id'] ?>"><span class="commnts_number_info"><?php echo $comment_number ?></span> Comments</a>
                                     <?php } ?>
                                 </div>
                             </div>
@@ -951,7 +951,7 @@ if (@$_GET['username']) {
                                         </div>
 
                             <?php }
-                                    echo '<a href="post?post_id=' . $run["id"] . '">Load Previous Comments</a> </div>';
+                                    echo '<a href="post.php?post_id=' . $run["id"] . '">Load Previous Comments</a> </div>';
                                 }
                             } ?>
                         </div>
@@ -1163,13 +1163,13 @@ if (@$_GET['username']) {
                                 <?php if ($run['user_id'] == $_SESSION['user_key']['id']) { ?>
                                     <div class="dropdown-menu">
                                         <a class="dropdown-item delete_post" onclick="deleteMyPost(<?php echo $run['id'] ?>)">Delete</a>
-                                        <a class="dropdown-item" href="post?post_id=<?php echo $run['id'] ?>">Go to Post</a>
+                                        <a class="dropdown-item" href="post.php?post_id=<?php echo $run['id'] ?>">Go to Post</a>
                                     </div>
                                 <?php } else { ?>
                                     <div class="dropdown-menu">
                                         <a class="dropdown-item" href="#">Report Inappropriate</a>
                                         <a class="dropdown-item unfollow_user_post" onclick="unfollowUser(<?php echo $run['user_id'] ?>)">Unfollow</a>
-                                        <a class="dropdown-item" href="post?post_id=<?php echo $run['id'] ?>">Go To Post</a>
+                                        <a class="dropdown-item" href="post.php?post_id=<?php echo $run['id'] ?>">Go To Post</a>
                                     </div>
                                 <?php } ?>
                             </div>
@@ -1214,14 +1214,14 @@ if (@$_GET['username']) {
                                 &nbsp;
                                 <?php
                                 if ($run['post_comments'] == null) { ?>
-                                    <a class="m-0" href="post?post_id=<?php echo $run['id'] ?>"><span class="commnts_number_info">0</span> Comments</a>
+                                    <a class="m-0" href="post.php?post_id=<?php echo $run['id'] ?>"><span class="commnts_number_info">0</span> Comments</a>
                                 <?php } else {
 
                                     $post_comments_array = json_decode($run['post_comments'], true);
 
                                     $comment_number = count($post_comments_array);
                                 ?>
-                                    <a class="m-0" href="post?post_id=<?php echo $run['id'] ?>"><span class="commnts_number_info"><?php echo $comment_number ?></span> Comments</a>
+                                    <a class="m-0" href="post.php?post_id=<?php echo $run['id'] ?>"><span class="commnts_number_info"><?php echo $comment_number ?></span> Comments</a>
                                 <?php } ?>
                             </div>
                         </div>
@@ -1469,7 +1469,7 @@ if (@$_GET['username']) {
                                     </div>
 
                         <?php }
-                                echo '<a href="post?post_id=' . $run["id"] . '">Load Previous Comments</a> </div>';
+                                echo '<a href="post.php?post_id=' . $run["id"] . '">Load Previous Comments</a> </div>';
                             }
                         } ?>
                     </div>
