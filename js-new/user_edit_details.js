@@ -24,14 +24,22 @@ $(document).ready(function () {
             form_data.append("file", property);
 
             $.ajax({
-                url: 'ajax/uploadimg.php',
+                url: 'ajax/uploadImg.php',
                 type: 'post',
                 data: form_data,
+                beforeSend: function () {
+
+                    // Before Send Loading Loader set Login Process
+                    $('.loader_2021').css("display", "inline");
+
+                    // console.log(form_data);
+                },
                 contentType: false,
                 cache: false,
                 processData: false,
                 success: function (data) {
                     $('#cover_pic_edit').attr("src", data);
+                    $('.loader_2021').css("display", "inline");
                 }
             });
         }
@@ -57,11 +65,19 @@ $(document).ready(function () {
                 url: 'ajax/uploadImg.php',
                 type: 'post',
                 data: form_data,
+                beforeSend: function () {
+
+                    // Before Send Loading Loader set Login Process
+                    $('.loader_2021').css("display", "inline");
+
+                    // console.log(form_data);
+                },
                 contentType: false,
                 cache: false,
                 processData: false,
                 success: function (data) {
                     $('#profile_pic_edit').attr("src", data);
+                    $('.loader_2021').css("display", "none");
                 }
             });
         }
