@@ -47,7 +47,7 @@ if (@$_GET['username']) {
 
                     <div class="col-12 w-100 h-auto p-0" id="uploadPostErr">
                         <div class="m-0 alert alert-danger" role="alert">
-                            Invalid file format
+                            Invalid file format Use only gif, png, jpg, jpeg
                         </div>
                     </div>
 
@@ -527,7 +527,9 @@ if (@$_GET['username']) {
 
         <div id="ajax_rslts"></div>
 
-        <input id="file-input" type="file" name="file" class="d-none">
+        <form id="img_upload_form">
+            <input id="file-input" type="file" name="file" class="d-none">
+        </form>
 
     <?php
     } else {
@@ -968,7 +970,9 @@ if (@$_GET['username']) {
 
         <div id="ajax_rslts"></div>
 
-        <input id="file-input" type="file" name="file" class="d-none">
+        <form id="img_upload_form">
+            <input id="file-input" type="file" name="file" class="d-none">
+        </form>
 
     <?php }
 } else {
@@ -1513,6 +1517,7 @@ if (@$_GET['username']) {
 
     <div id="ajax_rslts"></div>
 
-    <input id="file-input" type="file" name="file" class="d-none">
-
+    <form id="img_upload_form">
+        <input id="file-input" type="file" name="file" class="d-none">
+    </form>
 <?php } ?>

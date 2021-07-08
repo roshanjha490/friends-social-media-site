@@ -16,9 +16,9 @@ $(document).ready(function () {
                 $('#uploadPostErr').show();
             } else {
 
-                var form_data = new FormData();
+                var form_data = new FormData(document.getElementById("img_upload_form"));
 
-                form_data.append("file", property);
+                // form_data.append("file", property);
 
                 $.ajax({
                     url: 'ajax/uploadimg.php',
@@ -28,13 +28,15 @@ $(document).ready(function () {
     
                         // Before Send Loading Loader set Login Process
                         $('.loader_2021').css("display", "inline");
+
+                        // console.log(form_data);
                     },
                     contentType: false,
                     cache: false,
                     processData: false,
                     success: function (data) {
 
-                        // $('#ajax_rslts').html(data);
+                        $('#ajax_rslts').html(data);
 
                         $('#showupload_file_bx').show();
 
@@ -53,6 +55,8 @@ $(document).ready(function () {
                         $('#cancelFormBtn').show();
 
                         $('#uploadPostErr').hide();
+
+                        // console.log(data);
 
                         $('.loader_2021').css("display", "none");
 
