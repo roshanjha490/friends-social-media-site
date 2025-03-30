@@ -1146,4 +1146,4 @@ class Server
 }
 
 // Server Object with all connection and queries is formed
-$server_Obj = new Server("localhost", "root", "", "socialmedia");
+$server_Obj = new Server("mysql", "root", "root", "socialmedia");
